@@ -9,7 +9,7 @@ resource "azurerm_public_ip" "public_ip" {
   sku                 = each.value.sku_tier == "Global" ? "Standard" : each.value.sku
   sku_tier            = each.value.sku_tier == null ? "Regional" : each.value.sku_tier
   allocation_method   = each.value.allocation_method
-  domain_name_label   = each.value.dns_label
+  domain_name_label   = each.value.domain_name_label
   tags                = each.value.tags == null ? var.default_values.tags : each.value.tags
 }
 
